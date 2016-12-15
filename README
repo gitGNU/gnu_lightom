@@ -1,20 +1,15 @@
-Lig
+Lightom
 
-Lig (Libre IoT Guile) is a project under GPLv3 about IoT (Internet
-of Things) using GNU Guile and Libre Hardware.
+Lightom (LIbre Guile Hardware TO Make) is a project under GPLv3 about
+IoT (Internet of Things) using GNU Guile and Libre Hardware to
+automatic things.
 
 * Requeriments
  - guile
  - artanis
  - microscheme
 
-* Build
- - make
-
-* Install
- - make install
-
 * Runing
- - lig -c localhost or lig --connect localhost
- - lig -v or lig --version
- - lig -h or lig --help
+ - art work
+
+Access localhost:3000
