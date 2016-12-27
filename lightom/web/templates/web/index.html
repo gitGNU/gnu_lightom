@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lightom</title>
+    <link rel="stylesheet" href="{% static 'web/leaflet.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/custom.css' %}" />
+    <script src="{% static 'web/leaflet.js' %}"></script>
+  </head>
+  <body>
+    <div id="lightomap"></div>
+  </body>
+  <script>
+    var lightomap = L.map('lightomap').setView([-9.6565863, -35.7384311], 8);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 18,
+      id: 'your.mapbox.project.id',
+      accessToken: 'your.mapbox.public.access.token'
+    }).addTo(lightomap);
+    var marker = L.marker([-9.6565863, -35.7384311]).addTo(lightomap);
+    marker.bindPopup("Lightom!").openPopup();
+  </script>
+</html> 
