@@ -1,26 +1,66 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
     <title>Lightom</title>
-    <link rel="stylesheet" href="{% static 'web/leaflet.css' %}" />
-    <link rel="stylesheet" href="{% static 'web/custom.css' %}" />
-    <script src="{% static 'web/leaflet.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'web/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/leaflet.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/custom.css' %}" />    
   </head>
   <body>
-    <div id="lightomap"></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+	    <span class="glyphicon glyphicon-heart"></span> Lightom
+	  </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+	      <a href="/web/">
+		<span class="glyphicon glyphicon-home"></span> Inicio
+	      </a>
+	    </li>	    
+            <li>
+	      <a href="/admin/">
+		<span class="glyphicon glyphicon-cog"></span> Administrativo
+	      </a>
+	    </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br/><br/><br/><br/>
+    <div class="container-fluid">
+      <div class="row">
+	<div class="col-md-12">
+	  <div id="lightomap"></div>
+	</div>
+    </div>
+    <script src="{% static 'web/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'web/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'web/js/leaflet.js' %}"></script>
+    <script>
+      $('dropdown-toggle').dropdown()
+    </script>
+    <script>
+      var lightomap = L.map('lightomap').setView([-9.6565863, -35.7384311], 8);
+      var marker = L.marker([-9.6565863, -35.7384311]).addTo(lightomap);
+      marker.bindPopup("Lightom!").openPopup();
+    </script>    
   </body>
-  <script>
-    var lightomap = L.map('lightomap').setView([-9.6565863, -35.7384311], 8);
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-      maxZoom: 18,
-      id: 'your.mapbox.project.id',
-      accessToken: 'your.mapbox.public.access.token'
-    }).addTo(lightomap);
-    var marker = L.marker([-9.6565863, -35.7384311]).addTo(lightomap);
-    marker.bindPopup("Lightom!").openPopup();
-  </script>
-</html> 
+</html>

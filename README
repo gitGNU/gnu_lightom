@@ -1,15 +1,20 @@
 Lightom
 
-Lightom (LIbre Guile Hardware TO Make) is a project under GPLv3 about
-IoT (Internet of Things) using GNU Guile and Libre Hardware to
-automatic things.
+Lightom (Light On Management) is a project under GPLv3 about IoT
+(Internet of Things).
 
 * Requeriments
- - guile
- - artanis
- - microscheme
+ - python >= 3.5.2
+ - django >= 1.10.4
 
-* Runing
- - art work
+* Install
+ - pyvenv .env
+ - . .env/bin/activate
+ - pip install requeriments
 
-Access localhost:3000
+* Run
+ - . .env/bin/activate
+ - cd web
+ - python manage.py runserver
+
+Access localhost:8000/web

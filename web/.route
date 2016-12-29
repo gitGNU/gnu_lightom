@@ -1,2 +1,0 @@
-  (get "/user/show")
-  (get "/user/edit")
