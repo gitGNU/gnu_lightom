@@ -54,13 +54,10 @@
     <script src="{% static 'web/js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'web/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'web/js/leaflet.js' %}"></script>
+    <script src="{% static 'web/js/lightomap.js' %}"></script>
     <script>
-      $('dropdown-toggle').dropdown()
+      $('dropdown-toggle').dropdown();
+      initLightomap();
     </script>
-    <script>
-      var lightomap = L.map('lightomap').setView([-9.6565863, -35.7384311], 8);
-      var marker = L.marker([-9.6565863, -35.7384311]).addTo(lightomap);
-      marker.bindPopup("Lightom!").openPopup();
-    </script>    
   </body>
 </html>
