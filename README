@@ -41,4 +41,8 @@ sudo make install'
 
 Access localhost:3000
 
-Thiago - Davi - 
+# TODO
+* refactor logo (gimp) and add it
+* customizing admin
+* add fields to map based models
+* change colors for points
