@@ -5,13 +5,33 @@ from .models import Concentrador, Dispositivo, \
 
 class ConcentradorAdmin(admin.ModelAdmin):
     list_display = ['serial', 'ip', 'atualizacao']
-    verbose_name = "Concentrador"
-    verbose_name_plural = "concentradores"
+    search_fields = ['serial']
+    list_filter = ['atualizacao']
+
+
+class DispositivoAdmin(admin.ModelAdmin):
+    list_display = ['serial', 'estado', 'dimerizacao', 'ip', 'atualizacao']
+    list_filter = ['atualizacao']
+    search_fields = ['serial']
     
 
+class ProgramarEstadoAdmin(admin.ModelAdmin):
+    list_display = ['codigo', 'inicio', 'fim']
+    list_filter = ['inicio']
+
+
+class ProgramarDimerizacaoAdmin(admin.ModelAdmin):
+    list_display = ['codigo', 'inicio', 'fim']
+    list_filter = ['inicio']
+
+
+class SuporteAdmin(admin.ModelAdmin):
+    list_display = ['usuario']
+    search_fields = ['usuario']
+    
 
 admin.site.register(Concentrador, ConcentradorAdmin)
-admin.site.register(Dispositivo)
-admin.site.register(ProgramarEstado)
-admin.site.register(ProgramarDimerizacao)
-admin.site.register(Suporte)
+admin.site.register(Dispositivo, DispositivoAdmin)
+admin.site.register(ProgramarEstado, ProgramarEstadoAdmin)
+admin.site.register(ProgramarDimerizacao, ProgramarDimerizacaoAdmin)
+admin.site.register(Suporte, SuporteAdmin)

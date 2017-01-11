@@ -14,14 +14,17 @@ function initLightomap(e) {
 }
 
 function addPoint(j) {
-    html = "<b>Id:</b> " + j.Id + "<br/>" +
-	"<b>Nome:</b> " + j.Nome + "<br/>" +
+    html = "<b>Serial:</b> " + j.Serial + "<br/>" +
 	"<b>Estado:</b> <a href='#'> " + j.Estado + "</a><br>" +
-	"<b>Dimerização:</b> <a href='#'> " + j.Dismerizar + "%</a><br/>" +
+	"<b>Dimerização:</b> <a href='#'> " + j.Dismerizacao + "%</a><br/>" +
 	"<b>Potência:</b> " + j.Potencia + "<br/>" +
 	"<b>Tensão:</b> " + j.Tensao + "<br/>" +
+	"<b>Corrente:</b> " + j.Corrente + "<br/>" +
+	"<b>Fase:</b> " + j.Fase + "<br/>" +
 	"<b>Latitude:</b> " + j.Latitude + "<br/>" +
-	"<b>Longitude:</b> " + j.Longitude + "<br/>"; 
+	"<b>Longitude:</b> " + j.Longitude + "<br/>" +
+	"<b>IP:</b> " + j.IP + "<br/>" +
+	"<b>Atualização:</b> " + j.Atualizacao + "<br/>"; 
     marker = L.marker([j.Latitude, j.Longitude]).addTo(lightomap);
     marker.bindPopup(html);
 }
@@ -37,14 +40,17 @@ function addCircle(j) {
 }
 
 function clickMap(e) {
-    json = {"Id": "1234",
-	    "Nome": "Innovate",
+    json = {"Serial": "#83GNU$",
 	    "Estado": "Desligado",
-	    "Dismerizar": "100",
+	    "Dismerizacao": "100",
 	    "Potencia": "100",
-	    "Tensao": "100",
+	    "Tensao": "120",
+	    "Corrente": "220",
+	    "Fase": "1",
 	    "Latitude": e.latlng.lat.toString(),
-	    "Longitude": e.latlng.lng.toString()};
+	    "Longitude": e.latlng.lng.toString(),
+	    "IP": "10.10.10.1",
+	    "Atualizacao": "11/10/2017 - 13:00:00"};
     addPoint(json);
 }
 
