@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Concentrador(models.Model):
-    serial = models.CharField(max_length=100, primary_key=True,
+    serial = models.CharField(max_length=50, primary_key=True,
                               help_text='Número serial')
     latitude = models.CharField(max_length=100,
                                 help_text='Coordenada de latitude')

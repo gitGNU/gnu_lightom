@@ -19,7 +19,7 @@ from web import views
 
 
 urlpatterns = [
-    url(r'^$', views.index, name='home'),
-    #url(r'^web/', include('web.urls')),
+    url(r'^$', views.index, name="home"),
+    url(r'^api/', include('web.urls')),
     url(r'^admin/', admin.site.urls),
 ]

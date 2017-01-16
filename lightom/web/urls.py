@@ -1,6 +1,8 @@
 from django.conf.urls import url
-from . import views
+from . import api
+
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^concentrador/$', api.concentrador_list),
+    url(r'^concentrador/(?P<pk>[\w{}.-]{1,50})/$', api.concentrador_detail),
 ]
