@@ -21,28 +21,5 @@ Lightom (Light On Management) is a project under GPLv3 about IoT
 
 Access localhost:8000/web
 
-# Guile
-
-* Requeriments
- - guile >= 2.0
-
-* Install (Guix)
- `guix package -i artanis'
-
-* Install (Debian/Trisquel)
- `sudo apt-get install guile-2.0-dev guile-2.0 artanis
-wget -c http://alpha.gnu.org/gnu/artanis/artanis-latest.tar.bz2
-tar xvjf artanis-latest.tar.bz2
-cd artanis-latest && ./configure && make
-sudo make install'
-
-* Run
- - art work
-
-Access localhost:3000
-
 # TODO
-* refactor logo (gimp) and add it
-* customizing admin
-* add fields to map based models
-* change colors for points
+* add images maps
