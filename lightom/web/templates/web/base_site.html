@@ -57,9 +57,8 @@
     <script src="{% static 'web/js/lightomap.js' %}"></script>
     <script>
       $('dropdown-toggle').dropdown();
-      initLightomap();
-      lightomap.on('click', clickMap);
-      lightomap.on('doubleclick', doubleClickMap)
+      
+      {% block script %}{% endblock script %}
     </script>
   </body>
 </html>

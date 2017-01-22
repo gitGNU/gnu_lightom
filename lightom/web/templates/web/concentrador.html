@@ -2,7 +2,17 @@
 
 {% block content %}
 <div id="lightomap"></div>
-{% for concentrador in concentradores %}
-{{ concentrador }}
-{% endfor %}
 {% endblock content %}
+
+{% block script %}
+{% for concentrador in concentradores %}
+var json = {"Serial":"{{concentrador.serial}}",
+"Latitude":"{{concentrador.latitude}}",
+"Longitude":"{{concentrador.longitude}}",
+"IP":"{{concentrador.ip}}",
+"Atualizacao":"{{concentrador.atualizacao}}"};
+//LoadConcentrador(json);
+initLightomap(json);
+{% endfor %}
+//lightomap.on('click', AddConcentrador);
+{% endblock script %}

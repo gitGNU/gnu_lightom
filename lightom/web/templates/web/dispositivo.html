@@ -2,5 +2,7 @@
 
 {% block content %}
 <div id="lightomap"></div>
-{{ dispositivos }}
+{% for dispositivo in dispositivos %}
+{{ dispositivo.serial }}
+{% endfor %}
 {% endblock content %}

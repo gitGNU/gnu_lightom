@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Concentrador
+from .models import Concentrador, Dispositivo
 
 
 def concentradores(request):
@@ -9,6 +9,6 @@ def concentradores(request):
 
 
 def dispositivos(request, pk):
-    dispositivos = Dispositivos.objects.filter(concentrador=pk)
+    dispositivos = Dispositivo.objects.filter(concentrador=pk)
     context = {'dispositivos':dispositivos}
     return render(request, "web/dispositivo.html", context)
