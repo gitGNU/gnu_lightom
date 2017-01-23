@@ -2,7 +2,21 @@
 
 {% block content %}
 <div id="lightomap"></div>
-{% for dispositivo in dispositivos %}
-{{ dispositivo.serial }}
-{% endfor %}
 {% endblock content %}
+
+{% block script %}
+{% for dispositivo in dispositivos %}
+var data = {"Serial":"{{dispositivo.serial}}",
+"Estado":"{{dispositivo.estado}}",
+"Dimerizacao":"{{dispositivo.dimerizacao}}",
+"Potencia":"{{dispositivo.potencia}}",
+"Tensao":"{{dispositivo.tensao}}",
+"Corrente":"{{dispositivo.corrente}}",
+"Fase":"{{dispositivo.fase}}",
+"Latitude":"{{dispositivo.latitude}}",
+"Longitude":"{{dispositivo.longitude}}",
+"IP":"{{dispositivo.ip}}",
+"Atualizacao":"{{dispositivo.atualizacao}}"};
+LoadDispositivo(data);
+{% endfor %}
+{% endblock script %}

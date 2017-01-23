@@ -6,13 +6,12 @@
 
 {% block script %}
 {% for concentrador in concentradores %}
-var json = {"Serial":"{{concentrador.serial}}",
+var data = {"Serial":"{{concentrador.serial}}",
 "Latitude":"{{concentrador.latitude}}",
 "Longitude":"{{concentrador.longitude}}",
 "IP":"{{concentrador.ip}}",
 "Atualizacao":"{{concentrador.atualizacao}}"};
-//LoadConcentrador(json);
-initLightomap(json);
+LoadConcentrador(data);
 {% endfor %}
-//lightomap.on('click', AddConcentrador);
+lightomap.on('click', AddConcentrador);
 {% endblock script %}
